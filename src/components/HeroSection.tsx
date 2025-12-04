@@ -15,10 +15,11 @@ const HeroSection = ({ onOrderClick }: HeroSectionProps) => {
           </div>
         </div>
         <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-          Накрутка Голосов
+          Накрутка Голосов №1
         </h1>
         <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
-          Быстро, безопасно и эффективно увеличивайте количество голосов на любых платформах
+          Профессиональная накрутка голосов для ВКонтакте, Instagram, Facebook и других платформ. 
+          Безопасная накрутка голосов с гарантией качества от 500₽
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button 

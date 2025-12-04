@@ -69,9 +69,9 @@ const ReviewsFAQSection = ({ reviews, faqItems, onOrderClick }: ReviewsFAQSectio
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Частые Вопросы
+              Накрутка Голосов — FAQ
             </h2>
-            <p className="text-muted-foreground text-lg">Ответы на популярные вопросы наших клиентов</p>
+            <p className="text-muted-foreground text-lg">Ответы на частые вопросы о накрутке голосов</p>
           </div>
 
           <Accordion type="single" collapsible className="space-y-4">
@@ -99,17 +99,17 @@ const ReviewsFAQSection = ({ reviews, faqItems, onOrderClick }: ReviewsFAQSectio
             <Icon name="Sparkles" size={48} className="text-primary" />
           </div>
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Готовы Начать?
+            Заказать Накрутку Голосов
           </h2>
           <p className="text-xl text-muted-foreground">
-            Присоединяйтесь к тысячам довольных клиентов и увеличьте свою популярность уже сегодня
+            Профессиональная накрутка голосов с гарантией. Заказать накрутку голосов сейчас — увеличьте популярность уже сегодня!
           </p>
           <Button 
             onClick={onOrderClick}
             size="lg" 
             className="bg-gradient-to-r from-primary via-secondary to-accent hover:opacity-90 text-lg px-12 py-6"
           >
-            Заказать накрутку
+Заказать накрутку голосов
             <Icon name="Rocket" size={20} className="ml-2" />
           </Button>
         </div>

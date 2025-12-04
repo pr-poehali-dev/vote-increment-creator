@@ -56,9 +56,9 @@ const ServicesSection = ({ services, stats, onOrderClick }: ServicesSectionProps
       <section className="container mx-auto px-4 py-20">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Наши Услуги
+            Накрутка Голосов — Тарифы
           </h2>
-          <p className="text-muted-foreground text-lg">Выберите подходящий пакет для ваших целей</p>
+          <p className="text-muted-foreground text-lg">Профессиональная накрутка голосов по доступным ценам. Выберите накрутку голосов с гарантией качества</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
