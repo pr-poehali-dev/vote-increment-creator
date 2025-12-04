@@ -48,34 +48,6 @@ const Index = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const services = [
-    {
-      icon: 'ThumbsUp',
-      title: 'Базовая Накрутка',
-      price: '500₽',
-      votes: 'Накрутка 100 голосов',
-      features: ['Накрутка голосов за 24 часа', 'Реальные аккаунты', 'Безопасная накрутка'],
-      gradient: 'from-purple-600 to-pink-600'
-    },
-    {
-      icon: 'Zap',
-      title: 'Накрутка Стандарт',
-      price: '1500₽',
-      votes: 'Накрутка 500 голосов',
-      features: ['Быстрая накрутка голосов', 'Премиум аккаунты', 'Накрутка за 12 часов', 'Гарантия качества'],
-      gradient: 'from-pink-600 to-orange-500',
-      popular: true
-    },
-    {
-      icon: 'Crown',
-      title: 'Премиум Накрутка',
-      price: '3500₽',
-      votes: 'Накрутка 1500 голосов',
-      features: ['VIP накрутка голосов', 'Элитные аккаунты', 'Накрутка за 6 часов', 'Гарантия на накрутку', 'Поддержка 24/7'],
-      gradient: 'from-orange-500 to-purple-600'
-    }
-  ];
-
   const faqItems = [
     {
       question: 'Как быстро начинается накрутка голосов?',
@@ -158,7 +130,6 @@ const Index = () => {
         <HeroSection onOrderClick={() => setIsOrderOpen(true)} />
         
         <ServicesSection 
-          services={services} 
           stats={stats} 
           onOrderClick={() => setIsOrderOpen(true)} 
         />

@@ -1,16 +1,5 @@
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Icon from '@/components/ui/icon';
-
-interface Service {
-  icon: string;
-  title: string;
-  price: string;
-  votes: string;
-  features: string[];
-  gradient: string;
-  popular?: boolean;
-}
 
 interface Stats {
   clients: number;
@@ -19,12 +8,50 @@ interface Stats {
 }
 
 interface ServicesSectionProps {
-  services: Service[];
   stats: Stats;
   onOrderClick: () => void;
 }
 
-const ServicesSection = ({ services, stats, onOrderClick }: ServicesSectionProps) => {
+const ServicesSection = ({ stats, onOrderClick }: ServicesSectionProps) => {
+  const benefits = [
+    {
+      icon: 'Target',
+      title: 'Увеличение доверия',
+      description: 'Накрутка голосов повышает доверие аудитории к вашему контенту. Большое количество голосов создает эффект социального доказательства.',
+      gradient: 'from-purple-600 to-pink-600'
+    },
+    {
+      icon: 'TrendingUp',
+      title: 'Рост популярности',
+      description: 'Профессиональная накрутка голосов помогает вашим постам попадать в топ. Накрутка голосов — эффективный способ продвижения в соцсетях.',
+      gradient: 'from-pink-600 to-orange-500'
+    },
+    {
+      icon: 'Award',
+      title: 'Победа в конкурсах',
+      description: 'Накрутка голосов обеспечивает преимущество в голосованиях и конкурсах. Быстрая накрутка голосов для гарантированной победы.',
+      gradient: 'from-orange-500 to-purple-600'
+    },
+    {
+      icon: 'Users',
+      title: 'Привлечение подписчиков',
+      description: 'Накрутка голосов привлекает внимание новых пользователей. Чем больше голосов, тем активнее растет аудитория вашего аккаунта.',
+      gradient: 'from-blue-600 to-cyan-500'
+    },
+    {
+      icon: 'Rocket',
+      title: 'Быстрый старт проектов',
+      description: 'Накрутка голосов дает мощный старт новым проектам. Профессиональная накрутка голосов помогает быстро набрать первые позиции.',
+      gradient: 'from-green-600 to-emerald-500'
+    },
+    {
+      icon: 'Shield',
+      title: 'Безопасность и гарантии',
+      description: 'Безопасная накрутка голосов без рисков для аккаунта. Накрутка голосов с гарантией качества и полной конфиденциальностью.',
+      gradient: 'from-indigo-600 to-violet-500'
+    }
+  ];
+
   return (
     <>
       <section className="container mx-auto px-4 py-16 bg-gradient-to-r from-primary/5 via-secondary/5 to-accent/5">
@@ -56,51 +83,32 @@ const ServicesSection = ({ services, stats, onOrderClick }: ServicesSectionProps
       <section className="container mx-auto px-4 py-20">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Накрутка Голосов — Тарифы
+            Преимущества Накрутки Голосов
           </h2>
-          <p className="text-muted-foreground text-lg">Профессиональная накрутка голосов по доступным ценам. Выберите накрутку голосов с гарантией качества</p>
+          <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+            Накрутка голосов — это эффективный инструмент продвижения в социальных сетях. 
+            Профессиональная накрутка голосов помогает достичь ваших целей быстро и безопасно.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {services.map((service, index) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {benefits.map((benefit, index) => (
             <Card 
               key={index}
-              className={`relative overflow-hidden border-2 transition-all duration-300 hover:scale-105 hover:shadow-2xl animate-scale-in backdrop-blur-sm bg-card/50 ${
-                service.popular ? 'border-primary shadow-lg shadow-primary/20' : 'border-border'
-              }`}
+              className="relative overflow-hidden border-2 border-border transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:border-primary/50 animate-scale-in backdrop-blur-sm bg-card/50"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {service.popular && (
-                <div className="absolute top-4 right-4 bg-gradient-to-r from-primary to-secondary text-white px-3 py-1 rounded-full text-sm font-semibold">
-                  Популярный
-                </div>
-              )}
-              <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-5`}></div>
+              <div className={`absolute inset-0 bg-gradient-to-br ${benefit.gradient} opacity-5`}></div>
               <CardHeader className="relative">
-                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-4`}>
-                  <Icon name={service.icon as any} size={32} className="text-white" />
+                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${benefit.gradient} flex items-center justify-center mb-4`}>
+                  <Icon name={benefit.icon as any} size={32} className="text-white" />
                 </div>
-                <CardTitle className="text-2xl">{service.title}</CardTitle>
-                <CardDescription className="text-lg">{service.votes}</CardDescription>
+                <CardTitle className="text-xl">{benefit.title}</CardTitle>
               </CardHeader>
-              <CardContent className="relative space-y-4">
-                <div className="text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                  {service.price}
-                </div>
-                <ul className="space-y-2">
-                  {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center gap-2">
-                      <Icon name="Check" size={18} className="text-primary" />
-                      <span className="text-foreground/80">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Button 
-                  onClick={onOrderClick}
-                  className={`w-full bg-gradient-to-r ${service.gradient} hover:opacity-90`}
-                >
-                  Выбрать пакет
-                </Button>
+              <CardContent className="relative">
+                <p className="text-foreground/70 leading-relaxed">
+                  {benefit.description}
+                </p>
               </CardContent>
             </Card>
           ))}
